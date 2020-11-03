@@ -14,8 +14,8 @@ RUN set -eux; \
     rm -rf /etc/nginx/conf.d/default.conf && \
     mkdir -p /opt/jar/config 
 
-COPY nginx/v2prox.conf /etc/nginx/conf.d/
-ADD config /opt/jar/config
+COPY nginx/default.conf /etc/nginx/conf.d/
+ADD config/proxy.yaml /opt/jar/config/
 ADD  ./init.sh /opt/jar/run.sh
 
 RUN cd /opt/jar/ && \   
