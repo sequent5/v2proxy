@@ -7,6 +7,7 @@ RUN set -eux; \
     unzip \
     bash \
     curl && \
+    mkdir -p /opt/jar && \
     cd /opt/jar && \
     curl -L -o v2ray-proxy.jar https://glare.now.sh/master-coder-ll/v2ray-web-manager/v2ray-proxy && \
     apk del .build-deps && \
