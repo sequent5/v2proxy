@@ -25,6 +25,5 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 8091
 
-VOLUME /opt/jar/config
 WORKDIR /opt/jar/
 CMD ["/bin/sh", "run.sh"]
