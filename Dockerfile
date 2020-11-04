@@ -17,6 +17,7 @@ RUN set -eux; \
 
 COPY nginx/default.conf /etc/nginx/conf.d/
 ADD config/proxy.yaml /opt/jar/config/
+ADD nginx/v2proxy.conf /opt/jar/config/
 ADD  ./init.sh /opt/jar/run.sh
 
 RUN cd /opt/jar/ && \   
@@ -26,5 +27,6 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 8091
 
+VOLUME /opt/jar/config
 WORKDIR /opt/jar/
 CMD ["/bin/sh", "run.sh"]
