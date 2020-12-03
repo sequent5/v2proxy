@@ -15,10 +15,9 @@ RUN set -eux; \
     mkdir -p /opt/jar/config 
 
 ADD  config /opt/jar/config
-ADD  ./init.sh /opt/jar/run.sh
+ADD  ./init.sh /opt/jar/init.sh
 
-RUN cd /opt/jar/ && \   
-  chmod +x /opt/jar/run.sh
+RUN chmod +x /opt/jar/init.sh
 
 WORKDIR /opt/jar/
-CMD ["/bin/sh", "run.sh"]
+CMD ["/bin/sh", "init.sh"]
